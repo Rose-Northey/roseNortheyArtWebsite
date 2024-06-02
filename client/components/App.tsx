@@ -1,13 +1,16 @@
-import { useFruits } from '../hooks/useFruits.ts'
+import Alert from "./Alert"
+import ContactForm from "./ContactForm"
+import Header from "./Header"
+const message = "Now that Rose is both an artist and a coder she has taken it upon herself to code a new website. Apologies for the inconveience, she is very silly and stubborn about these things. Come back soon!"
 
 function App() {
-  const { data } = useFruits()
 
   return (
     <>
       <div className="app">
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>{data && data.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul>
+        <Header />
+        {message && <Alert message={message}/>}
+        <ContactForm />
       </div>
     </>
   )

@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate-fullstack-query",
+  "name": "RoseNortheyArtWebsite",
   "type": "module",
   "version": "2.0.0",
   "main": "server/index.js",
@@ -26,6 +26,7 @@
     ]
   },
   "dependencies": {
+    "@emotion/css": "^11.11.2",
     "express": "^4.17.2",
     "knex": "^2.5.1",
     "sqlite3": "^5.1.6",
@@ -63,7 +64,7 @@
     "supertest": "^6.2.2",
     "tsx": "^3.12.7",
     "typescript": "^5.1.6",
-    "vite": "^4.4.9",
+    "vite": "^4.5.3",
     "vitest": "^0.34.4"
   },
   "prettier": {
