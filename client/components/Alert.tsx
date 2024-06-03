@@ -16,7 +16,9 @@ export default function Alert({message}:AlertProps){
 }
 
 const alertWrapper = css({
-    margin:"1rem",
     padding:"1rem",
+    margin:"1rem auto 1rem auto",
     border:"1px solid black",
+    display:"flex",
+    flexDirection: "column"
 })

@@ -3,13 +3,22 @@
 *{
   margin:0;
   padding:0;
+  box-sizing: border-box;
 }
 
-html, 
-body {
+html{
   font-family: 'Times New Roman', sans-serif;
+  width:100%;
+}
+
+body{
+  display:flex;
+  width:100%;
 }
 
 .app{
- margin:2rem;
+ max-width: 80%;
+ margin:auto;
+ padding:1rem;
 }
+
