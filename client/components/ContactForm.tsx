@@ -3,8 +3,8 @@ export default function ContactForm(){
     <p>please feel free to send her an email:</p>
     <div>
         <p>roseanorthey@gmail.com</p>
-    </div>
-    <div >
+    </div> 
+    {/* <div >
               <label className="contact__form-label" >Message</label>
               <textarea
                 required
@@ -13,7 +13,7 @@ export default function ContactForm(){
                 name="message"
                 id="message"
               ></textarea>
-            </div>
+            </div> */}
 
 
 

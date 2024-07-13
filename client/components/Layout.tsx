@@ -1,3 +1,4 @@
+import { css } from "@emotion/css"
 import Alert from "./Alert"
 import ContactForm from "./ContactForm"
 import Header from "./Header"
@@ -9,11 +10,23 @@ function App() {
     <>
       <div className="app">
         <Header />
+        <div className={styles.innerBody}>
         {message && <Alert message={message}/>}
         <ContactForm />
+
+        </div>
       </div>
     </>
   )
 }
 
 export default App
+
+const styles = {
+  innerBody:css({
+    maxWidth: "80%",
+    margin:"auto",
+    padding:"5rem 2rem 2rem 2rem",
+  }),
+
+}
