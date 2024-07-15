@@ -1,4 +1,5 @@
 import { css } from '@emotion/css'
+import { colors, Spacing } from '../styles/stylingVariables'
 export default function Header (){
     return(
         <>
@@ -22,6 +23,7 @@ const styles = {
         position: "fixed",
         zIndex: 10,
         width: "100%",
-        height: "5rem"
+        height: Spacing.headerHeight,
+        backgroundColor: colors.primaryBackground
     })
 }
