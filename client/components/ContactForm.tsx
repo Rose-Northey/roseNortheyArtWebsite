@@ -1,21 +1,38 @@
-export default function ContactForm(){
-    return(<>
-    <p>please feel free to send her an email:</p>
-    <div>
-        <p>roseanorthey@gmail.com</p>
-    </div> 
-    {/* <div >
-              <label className="contact__form-label" >Message</label>
-              <textarea
-                required
-                className="contact__form-input"
-                placeholder="Enter Your Message"
-                name="message"
-                id="message"
-              ></textarea>
-            </div> */}
+import { css } from '@emotion/css'
+import { useForm, ValidationError } from '@formspree/react'
 
+export default function ContactForm() {
+	const [state, handleSubmit] = useForm('movajqzq')
+	if (state.succeeded) {
+		return <p>Thanks for joining!</p>
+	}
+	return (
+		<form onSubmit={handleSubmit} className={formStyling}>
+			<label htmlFor="email">Your Email Address</label>
+			<input id="email" type="email" name="email" />
+			<ValidationError
+				prefix="Email"
+				field="email"
+				errors={state.errors}
+			/>
 
+			<label>Your Message</label>
+			<textarea id="message" name="message" />
+			<ValidationError
+				prefix="Message"
+				field="message"
+				errors={state.errors}
+			/>
 
-    </>)
+			<button type="submit" disabled={state.submitting}>
+				Whoosh!
+			</button>
+		</form>
+	)
 }
+
+const formStyling = css({
+	display: 'flex',
+	flexDirection: 'column',
+	maxWidth: '40rem',
+})

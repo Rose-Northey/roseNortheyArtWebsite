@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@emotion/css": "^11.11.2",
+    "@formspree/react": "^2.5.1",
     "express": "^4.17.2",
     "knex": "^2.5.1",
     "sqlite3": "^5.1.6",
