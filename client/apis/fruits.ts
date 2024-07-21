@@ -1,4 +1,4 @@
-// import request from 'superagent'
+import request from 'superagent'
 
 // const rootUrl = '/api/v1'
 
@@ -6,4 +6,8 @@
 //   return request.get(rootUrl + '/fruits').then((res) => {
 //     return res.body.fruits
 //   })
+// }
+
+// export function verifyHumanity(){
+//     return request.post('https://www.google.com/recaptcha/api/siteverify')
 // }
