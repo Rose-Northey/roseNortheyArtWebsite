@@ -3,6 +3,7 @@
 $primary-background: #e9d6d7;
 $primary-text: #5b441f;
 
+
 * {
 	margin: 0;
 	padding: 0;
@@ -32,6 +33,7 @@ button {
 	margin: 0.5rem;
 	text-decoration: none;
 	border: none;
+	border-radius: BorderRadius.regular;
 }
 
 #app {
