@@ -8,18 +8,12 @@ export default function ContactForm() {
 	}
 	return (
 		<>
-			<script
-				src="https://www.google.com/recaptcha/api.js"
-				async
-				defer
-			></script>
 			<form
 				onSubmit={handleSubmit}
 				className={formStyling}
 				action="?"
 				method="POST"
 			>
-				<div className="g-recaptcha" data-sitekey="your_site_key"></div>
 				<label htmlFor="email">Your Email Address</label>
 				<input id="email" type="email" name="email" />
 				<ValidationError
@@ -48,4 +42,5 @@ const formStyling = css({
 	display: 'flex',
 	flexDirection: 'column',
 	maxWidth: '40rem',
+	padding: '2rem',
 })
