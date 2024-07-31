@@ -1,5 +1,6 @@
 import { css } from '@emotion/css'
-import { colors, Spacing } from '../styles/stylingVariables'
+import { Spacing } from '../styles/stylingVariables'
+import { colors } from '../styles/colors'
 export default function Header() {
 	return (
 		<>
