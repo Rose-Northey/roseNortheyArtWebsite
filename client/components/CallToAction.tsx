@@ -1,5 +1,6 @@
 import { css } from '@emotion/css'
 import { Spacing } from '../styles/stylingVariables'
+import background from '/background.jpg'
 
 export default function CallToAction(props: React.PropsWithChildren<object>) {
 	// TODO wrap the entire thing in reactRouTer so that we can use USE NAVIGATE
@@ -18,7 +19,7 @@ export default function CallToAction(props: React.PropsWithChildren<object>) {
 const styles = {
 	all: css({
 		paddingTop: Spacing.headerHeight,
-		backgroundImage: "url('/background.jpg')",
+		backgroundImage: `url(${background})`,
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
 		backgroundRepeat: 'no-repeat',
