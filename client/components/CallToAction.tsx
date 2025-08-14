@@ -18,7 +18,7 @@ export default function CallToAction(props: React.PropsWithChildren<object>) {
 const styles = {
 	all: css({
 		paddingTop: Spacing.headerHeight,
-		backgroundImage: "url('public/background.jpg')",
+		backgroundImage: "url('/background.jpg')",
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
 		backgroundRepeat: 'no-repeat',
