@@ -1,8 +1,10 @@
-[build]
-  base = "client"
+  [build]
+  # Run build from repo root (all dependencies are installed here)
   command = "npm run build:client"
-  publish = "dist"
+  # Publish the frontend build output
+  publish = "client/dist"
 
+# Ensure React Router (SPA) works on refresh
 [[redirects]]
   from = "/*"
   to = "/index.html"
