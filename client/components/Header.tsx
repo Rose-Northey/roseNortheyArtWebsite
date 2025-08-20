@@ -1,13 +1,12 @@
 import { css } from '@emotion/css'
 import { Spacing } from '../styles/stylingVariables'
 import { colors } from '../styles/colors'
-import logo from '/logo.png'
 
 export default function Header() {
 	return (
 		<>
 			<header className={styles.header}>
-				<img className={styles.logo} src={logo} />
+				<img className={styles.logo} src={'/logo.png'} />
 				<h1>Rose Northey Art</h1>
 			</header>
 		</>
