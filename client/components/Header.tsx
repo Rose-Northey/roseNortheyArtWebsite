@@ -7,6 +7,7 @@ export default function Header() {
 		<>
 			<header className={styles.header}>
 				<img className={styles.logo} src={'/logo.png'} />
+				<img className={styles.logo} src={'/background.jpg'} />
 				<h1>Rose Northey Art</h1>
 			</header>
 		</>
