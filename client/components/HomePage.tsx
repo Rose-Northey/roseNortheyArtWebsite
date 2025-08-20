@@ -1,7 +1,14 @@
 import CallToAction from './CallToAction'
 import ContactForm from './ContactForm'
-const message =
-	'Now that Rose is both an artist and a coder she has taken it upon herself to code a new website. Apologies for the inconveience, she is very silly and stubborn about these things. Come back soon!'
+const message = (
+	<div>
+		Rose is a poet, comedian, illustrator, and artist based in Wellington,
+		NZ.
+		<br></br>
+		In visual art, Rose works mainly with collage and acrylic ink. She
+		brings a sense of joy and whimsy into all of her practices.
+	</div>
+)
 export default function HomePage() {
 	return (
 		<>
