@@ -1,3 +1,4 @@
+import ArtBlock from './ArtBlock'
 import CallToAction from './CallToAction'
 import ContactForm from './ContactForm'
 const message = (
@@ -9,12 +10,17 @@ const message = (
 		brings a sense of joy and whimsy into all of her practices.
 	</div>
 )
+
 export default function HomePage() {
 	return (
 		<>
 			<p>testing this element</p>
 			<CallToAction>{message}</CallToAction>
-
+			<ArtBlock>
+				<img src="/art_couple.png"/>
+				<img src="/art_sunflowers.png"/>
+				<img src="/art_bird.png"/>
+			</ArtBlock>
 			<ContactForm />
 		</>
 	)
