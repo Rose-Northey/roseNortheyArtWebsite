@@ -1,5 +1,6 @@
 import { css } from '@emotion/css'
 import { Spacing } from '../styles/stylingVariables'
+import { colors } from '../styles/colors'
 
 export default function CallToAction(props: React.PropsWithChildren<object>) {
 	// TODO wrap the entire thing in reactRouTer so that we can use USE NAVIGATE
@@ -17,7 +18,6 @@ export default function CallToAction(props: React.PropsWithChildren<object>) {
 
 const styles = {
 	all: css({
-		paddingTop: Spacing.headerHeight,
 		backgroundImage: `url('/background.jpg')`,
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
@@ -32,7 +32,7 @@ const styles = {
 		alignItems: 'center',
 	}),
 	textBox: css({
-		backgroundColor: '#faf5b4dd',
+		backgroundColor: colors.primaryBackground,
 		padding: '1rem',
 	}),
 }

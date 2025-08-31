@@ -1,33 +1,34 @@
 import { css } from '@emotion/css'
+import { ImageTypes, ImageInfo } from './HomePage'
 
 interface ImageTileProps {
-	url: string
-	type: imageTypes
+	art: ImageInfo
 }
-type imageTypes = 'portrait' | 'landscape' | 'square'
 
-export default function ImageTileProps({ url, type }: ImageTileProps) {
+export default function ImageTileProps({ art }: ImageTileProps) {
 	return (
 		<>
-			<img src={url} className={imageTileStyle(type)} />
+			<img src={art.url} className={imageTileStyle(art.type)} />
 		</>
 	)
 }
-const imageTileStyle = (type: imageTypes) => {
+const imageTileStyle = (type: ImageTypes) => {
 	switch (type) {
-		case 'portrait': {
+		case ImageTypes.portrait: {
 			return css({
-				margin: 'auto',
+				paddingTop: 'auto',
 			})
 		}
-		case 'landscape': {
+		case ImageTypes.landscape: {
 			return css({
-				margin: '1rem auto',
+				paddingTop: '1rem',
+				paddingBottom: '1rem',
 			})
 		}
-		case 'square': {
+		case ImageTypes.square: {
 			return css({
-				margin: '1rem auto',
+				paddingTop: '0.5rem',
+				paddingBottom: '0.5rem',
 			})
 		}
 	}

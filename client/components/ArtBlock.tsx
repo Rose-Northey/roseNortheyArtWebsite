@@ -2,31 +2,39 @@ import { css } from '@emotion/css'
 import { Spacing } from '../styles/stylingVariables'
 import { ReactNode } from 'react'
 import React from 'react'
+import { ImageInfo } from './HomePage'
+import ImageTile from './ImageTile'
 
 interface ArtBlockProps {
-	children: ReactNode
+	art: ImageInfo[]
+	backgroundColour: string
 }
 
 //the pictures either say portrait or landscape or square
 //they are set by height but there is more top margin for the landscape / square ones
+// they come through as props
 
-export default function ArtBlock({ children }: ArtBlockProps) {
+export default function ArtBlock({ art, backgroundColour }: ArtBlockProps) {
 	return (
 		<>
-			<div className={styles.all}>
-				{React.Children.map(children, (picture, index) => {
-					if (!picture || typeof picture !== 'object') return null
-					return <div key={index}>{picture}</div>
+			<div className={artTileStyle(backgroundColour)}>
+				{art.map((artwork, i) => {
+					return (
+						<div>
+							<ImageTile art={artwork} />
+						</div>
+					)
 				})}
 			</div>
 		</>
 	)
 }
 
-const styles = {
-	all: css({
-		maxHeight: '15rem',
-		backgroundColor: '#414b6f',
+const artTileStyle = (backgroundColour: string) => {
+	return css({
+		maxHeight: '25rem',
+		// backgroundColor: '#414b6f',
+		backgroundColor: backgroundColour,
 		display: 'flex',
 		justifyContent: 'center',
 		padding: 'auto',
@@ -34,16 +42,16 @@ const styles = {
 		paddingBottom: '1rem',
 		gap: '1rem',
 
-		'& > div': {
+		'& div': {
 			maxWidth: '25%',
 			aspectRatio: '1/1',
 			display: 'flex',
 			justifyContent: 'center',
 			alignItems: 'center',
 		},
-		'& > div > img': {
+		'& img': {
 			maxWidth: '100%',
 			maxHeight: '100%',
 		},
-	}),
+	})
 }
