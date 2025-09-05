@@ -8,6 +8,7 @@ export default function ContactForm() {
 	}
 	return (
 		<>
+<<<<<<< Updated upstream
 			<form
 				onSubmit={handleSubmit}
 				className={formStyling}
@@ -21,6 +22,36 @@ export default function ContactForm() {
 					field="email"
 					errors={state.errors}
 				/>
+=======
+			<div className={sectionStyle} id="contactForm">
+				<img src="/photo_rose.jpg" />
+				<div className={formBoxStyle}>
+					{state.succeeded && (
+						<div>
+							<p>
+								Your message has been sent! A Rose will be in
+								contact with you shortly.
+							</p>
+							<button onClick={reset}>
+								Hey! I want to send another message!
+							</button>
+						</div>
+					)}
+					{!state.succeeded && (
+						<form
+							onSubmit={handleSubmit}
+							className={formStyling}
+							action="?"
+							method="POST"
+						>
+							<label htmlFor="email">Your Email Address</label>
+							<input id="email" type="email" name="email" />
+							<ValidationError
+								prefix="Email"
+								field="email"
+								errors={state.errors}
+							/>
+>>>>>>> Stashed changes
 
 				<label>Your Message</label>
 				<textarea id="message" name="message" />
