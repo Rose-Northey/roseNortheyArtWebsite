@@ -1,7 +1,4 @@
 import { css } from '@emotion/css'
-import { Spacing } from '../styles/stylingVariables'
-import { ReactNode } from 'react'
-import React from 'react'
 import { ImageInfo } from './HomePage'
 import ImageTile from './ImageTile'
 

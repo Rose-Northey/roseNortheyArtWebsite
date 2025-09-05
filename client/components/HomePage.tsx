@@ -1,3 +1,4 @@
+import ArtBlock from './ArtBlock'
 import CallToAction from './CallToAction'
 import ContactForm from './ContactForm'
 const message = (
@@ -9,8 +10,6 @@ const message = (
 		brings a sense of joy and whimsy into all of her practices.
 	</div>
 )
-<<<<<<< Updated upstream
-=======
 
 export enum ImageTypes {
 	'portrait',
@@ -50,13 +49,12 @@ const artBlock2Art = [
 	},
 ]
 
->>>>>>> Stashed changes
 export default function HomePage() {
 	return (
 		<>
-			<p>testing this element</p>
 			<CallToAction>{message}</CallToAction>
-
+			<ArtBlock art={artBlock1Art} backgroundColour="#414b6f" />
+			<ArtBlock art={artBlock2Art} backgroundColour="#c27653" />
 			<ContactForm />
 		</>
 	)
