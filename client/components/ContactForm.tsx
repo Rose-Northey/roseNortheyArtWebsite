@@ -2,17 +2,22 @@ import { css } from '@emotion/css'
 import { useForm, ValidationError } from '@formspree/react'
 
 export default function ContactForm() {
-	const [state, handleSubmit] = useForm('movajqzq')
+	const [state, handleSubmit, reset] = useForm('movajqzq')
 	return (
 		<>
-			<div className={sectionStyle}>
+			<div className={sectionStyle} id="contactForm">
 				<img src="/photo_rose.JPG" />
 				<div className={formBoxStyle}>
 					{state.succeeded && (
-						<p>
-							Your message has been sent! A Rose will be in
-							contact with you shortly
-						</p>
+						<div>
+							<p>
+								Your message has been sent! A Rose will be in
+								contact with you shortly.
+							</p>
+							<button onClick={reset}>
+								Hey! I want to send another message!
+							</button>
+						</div>
 					)}
 					{!state.succeeded && (
 						<form
@@ -51,9 +56,7 @@ export default function ContactForm() {
 const formStyling = css({
 	display: 'flex',
 	flexDirection: 'column',
-	maxWidth: '50%',
-	padding: '2rem',
-	height: '20rem',
+	width: '60%',
 })
 
 const formBoxStyle = css({

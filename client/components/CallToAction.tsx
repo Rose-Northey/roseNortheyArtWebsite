@@ -7,9 +7,12 @@ export default function CallToAction(props: React.PropsWithChildren<object>) {
 	return (
 		<>
 			<div className={styles.all}>
+				{/* <div className={styles.selfPortraitContainer}> */}
+				{/* <img src="/Rose.png" className={styles.selfPortrait} /> */}
+				{/* </div> */}
 				<div className={styles.contentSide}>
 					<div className={styles.textBox}>{props.children}</div>
-					{/* <button>text</button> */}
+					<a href="#contactForm"> Contact Rose</a>
 				</div>
 			</div>
 		</>
@@ -24,7 +27,15 @@ const styles = {
 		backgroundRepeat: 'no-repeat',
 		display: 'flex',
 	}),
-	selfPortrait: css({}),
+	selfPortraitContainer: css({
+		position: 'relative',
+		minWidth: '10rem',
+	}),
+	selfPortrait: css({
+		position: 'absolute',
+		maxWidth: '10rem',
+		bottom: '0',
+	}),
 	contentSide: css({
 		padding: '1rem',
 		display: 'flex',
