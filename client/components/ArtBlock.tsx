@@ -30,14 +30,12 @@ export default function ArtBlock({ art, backgroundColour }: ArtBlockProps) {
 const artTileStyle = (backgroundColour: string) => {
 	return css({
 		maxHeight: '25rem',
-		// backgroundColor: '#414b6f',
 		backgroundColor: backgroundColour,
 		display: 'flex',
 		justifyContent: 'center',
 		padding: 'auto',
 		paddingTop: '1rem',
 		paddingBottom: '1rem',
-		gap: '1rem',
 
 		'& div': {
 			maxWidth: '25%',
@@ -45,10 +43,17 @@ const artTileStyle = (backgroundColour: string) => {
 			display: 'flex',
 			justifyContent: 'center',
 			alignItems: 'center',
+			flexWrap: 'wrap',
 		},
 		'& img': {
 			maxWidth: '100%',
 			maxHeight: '100%',
+		},
+		'@media (max-width:500px)': {
+			'& div': {
+				maxWidth: '33%',
+				flexWrap: 'wrap',
+			},
 		},
 	})
 }

@@ -16,6 +16,9 @@ export default function Header() {
 const styles = {
 	logo: css({
 		width: '3rem',
+		'@media (max-width:500px)': {
+			display: 'none',
+		},
 	}),
 	header: css({
 		padding: '1rem',

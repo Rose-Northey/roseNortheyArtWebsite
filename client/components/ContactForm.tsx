@@ -56,7 +56,11 @@ export default function ContactForm() {
 const formStyling = css({
 	display: 'flex',
 	flexDirection: 'column',
-	width: '60%',
+	width: '80%',
+	paddingTop: '1rem',
+	'@media (max-width:500px)': {
+		width: '95%',
+	},
 })
 
 const formBoxStyle = css({
@@ -66,6 +70,7 @@ const formBoxStyle = css({
 	display: 'flex',
 	justifyContent: 'center',
 	alignItems: 'center',
+	minWidth: '200px',
 })
 
 const sectionStyle = css({
@@ -73,6 +78,11 @@ const sectionStyle = css({
 	flexDirection: 'row',
 	'& img': {
 		maxHeight: '20rem',
-		margin: '2rem',
+		margin: '1rem',
+	},
+	'@media (max-width:600px)': {
+		'& img': {
+			display: 'none',
+		},
 	},
 })

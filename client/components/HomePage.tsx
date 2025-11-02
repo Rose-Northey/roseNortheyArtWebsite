@@ -25,26 +25,26 @@ const artBlock1Art = [
 		type: ImageTypes.portrait,
 	},
 	{
-		url: '/art_sunflowers.png',
+		url: '/art_sunflowers.JPG',
 		type: ImageTypes.landscape,
 	},
 	{
-		url: '/art_mushrooms.jpg',
+		url: '/art_mushrooms.JPG',
 		type: ImageTypes.square,
 	},
 ]
 
 const artBlock2Art = [
 	{
-		url: '/art_bird.png',
+		url: '/art_bird.JPG',
 		type: ImageTypes.portrait,
 	},
 	{
-		url: '/art_irritation.png',
+		url: '/art_irritation.JPG',
 		type: ImageTypes.portrait,
 	},
 	{
-		url: '/art_mermaid.png',
+		url: '/art_mermaid.JPG',
 		type: ImageTypes.square,
 	},
 ]
