@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import ArtBlock from './ArtBlock'
 import CallToAction from './CallToAction'
 import ContactForm from './ContactForm'
+import { css } from '@emotion/css'
 const message = (
 	<div>
 		Rose is a poet, comedian, illustrator, and artist based in Wellington,
@@ -70,8 +71,8 @@ export default function HomePage() {
 			}
 		})
 	}, [])
-	if (!isLoaded) {
-		return <>Loading</>
+	if (isLoaded) {
+		return <div className={loadingScreen}>chasing ducks...</div>
 	}
 
 	return (
@@ -83,3 +84,13 @@ export default function HomePage() {
 		</>
 	)
 }
+
+const loadingScreen = css({
+	width: '100%',
+	height: '100%',
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	letterSpacing: '0.2rem',
+	fontSize: '1.2rem',
+})
