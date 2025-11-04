@@ -19,6 +19,8 @@ export enum ImageTypes {
 	'square',
 }
 
+const callToActionImage = '/background.jpg'
+
 export type ImageInfo = { url: string; type: ImageTypes }
 
 const artBlock1Art = [
@@ -55,15 +57,24 @@ export default function HomePage() {
 	const [isLoaded, setIsLoaded] = useState(false)
 
 	useEffect(() => {
-		const imageUrls = [...artBlock1Art, ...artBlock2Art].map(
-			(img) => img.url,
-		)
-		let loadedCount = 0
+		// collect all image URLs from the page
+		const imageUrls = [
+			callToActionImage,
+			...artBlock1Art.map((a) => a.url),
+			...artBlock2Art.map((a) => a.url),
+		]
 
+		let loadedCount = 0
 		imageUrls.forEach((url) => {
 			const img = new Image()
 			img.src = url
 			img.onload = () => {
+				loadedCount++
+				if (loadedCount === imageUrls.length) {
+					setIsLoaded(true)
+				}
+			}
+			img.onerror = () => {
 				loadedCount++
 				if (loadedCount === imageUrls.length) {
 					setIsLoaded(true)
@@ -77,7 +88,7 @@ export default function HomePage() {
 
 	return (
 		<>
-			<CallToAction>{message}</CallToAction>
+			<CallToAction image={callToActionImage}>{message}</CallToAction>
 			<ArtBlock art={artBlock1Art} backgroundColour="#414b6f" />
 			<ArtBlock art={artBlock2Art} backgroundColour="#c27653" />
 			<ContactForm />
