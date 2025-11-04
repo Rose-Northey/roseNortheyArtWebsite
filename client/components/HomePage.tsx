@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import ArtBlock from './ArtBlock'
 import CallToAction from './CallToAction'
 import ContactForm from './ContactForm'
@@ -50,6 +51,29 @@ const artBlock2Art = [
 ]
 
 export default function HomePage() {
+	const [isLoaded, setIsLoaded] = useState(false)
+
+	useEffect(() => {
+		const imageUrls = [...artBlock1Art, ...artBlock2Art].map(
+			(img) => img.url,
+		)
+		let loadedCount = 0
+
+		imageUrls.forEach((url) => {
+			const img = new Image()
+			img.src = url
+			img.onload = () => {
+				loadedCount++
+				if (loadedCount === imageUrls.length) {
+					setIsLoaded(true)
+				}
+			}
+		})
+	}, [])
+	if (!isLoaded) {
+		return <>Loading</>
+	}
+
 	return (
 		<>
 			<CallToAction>{message}</CallToAction>
