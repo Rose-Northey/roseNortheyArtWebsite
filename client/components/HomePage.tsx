@@ -71,7 +71,7 @@ export default function HomePage() {
 			}
 		})
 	}, [])
-	if (isLoaded) {
+	if (!isLoaded) {
 		return <div className={loadingScreen}>chasing ducks...</div>
 	}
 
