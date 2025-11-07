@@ -65,7 +65,9 @@ export default function GoodieBoxForm() {
 								</div>
 							</div>
 							<div className={styles.smallField}>
-								<label htmlFor="number">Number of Boxes*</label>
+								<label htmlFor="number">
+									Number of Parcels*
+								</label>
 								<input
 									id="numberOfBoxes"
 									type="number"
