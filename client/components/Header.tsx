@@ -6,8 +6,19 @@ export default function Header() {
 	return (
 		<>
 			<header className={styles.header}>
-				<img className={styles.logo} src={'/logo.png'} />
-				<h1>Rose Northey Art</h1>
+				<div className={styles.homeAndLogo}>
+					<img className={styles.logo} src={'/logo.png'} />
+					<div className={styles.navContainer}>
+						<a className={styles.nav} href={'/'}>
+							Home
+						</a>
+						<a className={styles.nav} href={'/shop'}>
+							Shop
+						</a>
+					</div>
+				</div>
+
+				<h1 className={styles.title}>Rose Northey Art</h1>
 			</header>
 		</>
 	)
@@ -30,5 +41,35 @@ const styles = {
 		width: '100%',
 		height: Spacing.headerHeight,
 		backgroundColor: colors.primaryBackground,
+		'@media (max-width:500px)': {
+			fontSize: '0.8rem',
+			padding: '0.5rem',
+		},
+	}),
+	homeAndLogo: css({
+		display: 'flex',
+		gap: '1rem',
+		alignItems: 'center',
+		height: '100%',
+	}),
+	nav: css({
+		backgroundColor: '#ffffff6b',
+		padding: '0.3rem',
+		color: colors.primaryText,
+		margin: '0',
+	}),
+	navContainer: css({
+		display: 'flex',
+		gap: '0.5rem',
+		'@media (max-width:330px)': {
+			flexDirection: 'column',
+			justifyContent: 'center',
+			alignItems: 'center',
+		},
+	}),
+	title: css({
+		'@media (max-width:500px)': {
+			margin: '0.5rem',
+		},
 	}),
 }
