@@ -15,7 +15,7 @@ export default function GoodieBoxForm() {
 			<div className={sectionStyle} id="contactForm">
 				<div className={styles.formBoxStyle}>
 					{state.succeeded && (
-						<div>
+						<div className={formStyling}>
 							<p>
 								{`Rose will send you an invoice for
 								${numberOfBoxes * 50}nzd. Once payment has been received, your box of goodies will make its way over to you!`}
@@ -165,23 +165,12 @@ const formStyling = css({
 	display: 'flex',
 	flexDirection: 'column',
 	gap: '1rem',
-	padding: '1rem',
+	padding: '2rem',
 })
 
 const sectionStyle = css({
 	display: 'flex',
 	flexDirection: 'row',
-
-	'& img': {
-		maxWidth: '20rem',
-		margin: '1rem',
-		aspectRatio: 'initial',
-	},
-	'@media (max-width:600px)': {
-		'& img': {
-			display: 'none',
-		},
-	},
 })
 
 const styles = {
@@ -193,17 +182,27 @@ const styles = {
 		minWidth: '200px',
 		backgroundColor: colors.primaryBackground,
 		gap: '1rem',
+		padding: '2rem,',
+		'@media (max-width:500px)': {
+			minWidth: '0',
+		},
 	}),
 	mediumField: css({
 		display: 'flex',
 		flexDirection: 'column',
 		minWidth: '20rem',
+		'@media (max-width:500px)': {
+			minWidth: '0',
+		},
 	}),
 	severalHorizontal: css({
 		display: 'flex',
 		gap: '1rem',
 		marginTop: '0.5rem',
 		flexWrap: 'wrap',
+		'@media (max-width:500px)': {
+			flexDirection: 'column',
+		},
 	}),
 	smallField: css({
 		display: 'flex',
