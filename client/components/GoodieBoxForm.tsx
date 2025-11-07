@@ -2,7 +2,6 @@ import { css } from '@emotion/css'
 import { useForm, ValidationError } from '@formspree/react'
 import { useState } from 'react'
 import { validateCity } from './GoodieBoxFormValidation'
-import Carousel from './Carousel'
 import { colors } from '../styles/colors'
 
 export default function GoodieBoxForm() {
@@ -152,7 +151,7 @@ export default function GoodieBoxForm() {
 								/>
 							</div>
 							<button type="submit" disabled={state.submitting}>
-								Send me an invoice!
+								Ask Rose to email me an invoice!
 							</button>
 						</form>
 					)}
