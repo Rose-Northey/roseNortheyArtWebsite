@@ -1,6 +1,7 @@
 import { css } from '@emotion/css'
 import { Spacing } from '../styles/stylingVariables'
 import { colors } from '../styles/colors'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
 	return (
@@ -9,12 +10,12 @@ export default function Header() {
 				<div className={styles.homeAndLogo}>
 					<img className={styles.logo} src={'/logo.png'} />
 					<div className={styles.navContainer}>
-						<a className={styles.nav} href={'/'}>
+						<Link className={styles.nav} to={`/`}>
 							Home
-						</a>
-						<a className={styles.nav} href={'/shop'}>
+						</Link>
+						<Link className={styles.nav} to={`/shop`}>
 							Shop
-						</a>
+						</Link>
 					</div>
 				</div>
 
