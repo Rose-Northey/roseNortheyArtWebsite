@@ -1,10 +1,15 @@
 import { css } from '@emotion/css'
 import { useForm, ValidationError } from '@formspree/react'
 import { useState } from 'react'
+import { validateCity } from './GoodieBoxFormValidation'
+import Carousel from './Carousel'
+import { colors } from '../styles/colors'
 
 export default function GoodieBoxForm() {
 	const [state, handleSubmit, reset] = useForm('movajqzq')
 	const [numberOfBoxes, setNumberOfBoxes] = useState(1)
+	const [city, setCity] = useState('')
+	const [cityError, setCityError] = useState<null | string>(null)
 
 	return (
 		<>
@@ -99,8 +104,22 @@ export default function GoodieBoxForm() {
 											id="city"
 											name="city"
 											type="text"
+											value={city}
+											onChange={(e) => {
+												setCity(e.target.value)
+												setCityError(null)
+											}}
+											onBlur={() => {
+												const error = validateCity(city)
+												setCityError(error)
+											}}
 											required
 										/>
+										{cityError && (
+											<p className={styles.errorText}>
+												{cityError}
+											</p>
+										)}
 									</div>
 									<div className={styles.smallField}>
 										<label htmlFor="postcode">
@@ -146,12 +165,8 @@ export default function GoodieBoxForm() {
 const formStyling = css({
 	display: 'flex',
 	flexDirection: 'column',
-	width: '80%',
 	gap: '1rem',
-	paddingTop: '1rem',
-	'@media (max-width:500px)': {
-		width: '95%',
-	},
+	padding: '1rem',
 })
 
 const sectionStyle = css({
@@ -173,12 +188,11 @@ const sectionStyle = css({
 const styles = {
 	formBoxStyle: css({
 		width: '100%',
-		margin: '2rem',
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
 		minWidth: '200px',
-		backgroundColor: '#fef3d3ff',
+		backgroundColor: colors.primaryBackground,
 		gap: '1rem',
 	}),
 	mediumField: css({
@@ -207,100 +221,8 @@ const styles = {
 	smallArea: css({
 		width: '3rem',
 	}),
+	errorText: css({
+		fontSize: '10pt',
+		color: 'red',
+	}),
 }
-
-const nzCities = [
-	'Auckland',
-	'Christchurch',
-	'Manukau City',
-	'Wellington',
-	'Northcote',
-	'Hamilton',
-	'Tauranga',
-	'Lower Hutt',
-	'Dunedin',
-	'Palmerston North',
-	'Napier',
-	'New Plymouth',
-	'Porirua',
-	'Rotorua',
-	'Whangarei',
-	'Invercargill',
-	'Nelson',
-	'Upper Hutt',
-	'Gisborne',
-	'Paraparaumu',
-	'Timaru',
-	'Blenheim',
-	'Taupo',
-	'Cambridge',
-	'Feilding',
-	'Levin',
-	'Rolleston',
-	'Whakatane',
-	'Richmond',
-	'Havelock North',
-	'Tokoroa',
-	'Mosgiel',
-	'Te Awamutu',
-	'Waikanae',
-	'Hawera',
-	'Waiuku',
-	'Paraparaumu Beach',
-	'Wanaka',
-	'Te Puke',
-	'Greymouth',
-	'Matamata',
-	'Thames',
-	'Kawerau',
-	'Kerikeri',
-	'Waitara',
-	'Ngaruawahia',
-	'Mount Maunganui',
-	'Lincoln',
-	'Kaitaia',
-	'Stratford',
-	'Alexandra',
-	'Cromwell',
-	'Warkworth',
-	'Waihi',
-	'Raumati Beach',
-	'Marton',
-	'Whitianga',
-	'Tuakau',
-	'Dargaville',
-	'Katikati',
-	'Westport',
-	'Tauwhare',
-	'Te Aroha',
-	'Kaikohe',
-	'Prebbleton',
-	'Paeroa',
-	'Whangamata',
-	'Balclutha',
-	'Snells Beach',
-	'Turangi',
-	'Raglan',
-	'Foxton',
-	'Darfield',
-	'Ashhurst',
-	'Hokitika',
-	'Helensville',
-	'Woodend',
-	'Kihikihi',
-	'Pahiatua',
-	'Wakefield',
-	'Ruakaka',
-	'Winton',
-	'Maraetai',
-	'Te Anau',
-	'Clive',
-	'Oxford',
-	'Pokeno',
-	'Milton',
-	'Waihi Beach',
-	'Brightwater',
-	'Leeston',
-	'West Melton',
-	'Waitangi',
-]
