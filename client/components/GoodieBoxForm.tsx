@@ -137,6 +137,10 @@ export default function GoodieBoxForm() {
 									</div>
 								</div>
 							</div>
+							<div className={styles.mediumField}>
+								<label htmlFor="street">Phone Number</label>
+								<input id="phone" name="phone" type="text" />
+							</div>
 							<div className={styles.largeField}>
 								<label>
 									Anything Rose should know? (optional)
