@@ -3,16 +3,29 @@ import { useForm, ValidationError } from '@formspree/react'
 import { useState } from 'react'
 import { validateCity } from './GoodieBoxFormValidation'
 import { colors } from '../styles/colors'
+import { Link } from 'react-router-dom'
 
 export default function GoodieBoxForm() {
-	const [state, handleSubmit, reset] = useForm('movajqzq')
-	const [numberOfBoxes, setNumberOfBoxes] = useState(1)
-	const [city, setCity] = useState('')
-	const [cityError, setCityError] = useState<null | string>(null)
+	// const [state, handleSubmit, reset] = useForm('movajqzq')
+	// const [numberOfBoxes, setNumberOfBoxes] = useState(1)
+	// const [city, setCity] = useState('')
+	// const [cityError, setCityError] = useState<null | string>(null)
 
 	return (
 		<>
-			<div className={sectionStyle} id="contactForm">
+			<div className={sectionStyle}>
+				<div className={styles.formBoxStyle}>
+					<div className={formStyling}>
+						<p>
+							{`Eek! These have all sold out. Rose will let you know if that changes! Sorry. But wow your hair looks so good with your face shape. Have an excellent day!`}
+						</p>
+						<Link to={'/#contactForm'}>
+							Wait! I want to say something to Rose!!
+						</Link>
+					</div>
+				</div>
+			</div>
+			{/* <div className={sectionStyle} id="contactForm">
 				<div className={styles.formBoxStyle}>
 					{state.succeeded && (
 						<div className={formStyling}>
@@ -162,7 +175,7 @@ export default function GoodieBoxForm() {
 						</form>
 					)}
 				</div>
-			</div>
+			</div> */}
 		</>
 	)
 }

@@ -63,5 +63,8 @@ const styles = {
 		backgroundRepeat: 'no-repeat',
 		display: 'flex',
 		justifyContent: 'center',
+		minHeight: '100%',
+		height: '100%',
+		paddingBottom: '5rem',
 	}),
 }
